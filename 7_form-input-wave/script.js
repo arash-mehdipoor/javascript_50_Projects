@@ -1,10 +1,8 @@
-const right = document.querySelector('.right');
-const left = document.querySelector('.left');
-const split = document.querySelector('.split');
-const container = document.querySelector('.container');
+const labels = document.querySelectorAll('.form-control label');
 
-left.addEventListener('mouseenter', () => container.classList.add('hover-left'));
-left.addEventListener('mouseleave', () => container.classList.remove('hover-left'));
 
-right.addEventListener('mouseenter', () => container.classList.add('hover-right'));
-right.addEventListener('mouseleave', () => container.classList.remove('hover-right'));
+labels.forEach(label => {
+    label.innerHTML = label.innerText.split('')
+        .map((latter, index) => `<span style='transition-delay:${index * 50}ms'>${latter}</span>`)
+        .join('')
+})
