@@ -10,6 +10,7 @@ counters.forEach(counter => {
 
         const increment = target / 200;
         if (c < target) {
+            debugger
             counter.innerText = `${Math.ceil(c + increment)}`;
             setTimeout(updateCounter, 1)
         } else {
